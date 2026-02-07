@@ -1,0 +1,75 @@
+# OpenCLI Spec Configuration
+# This file demonstrates how to configure gospec-cli to convert your CLI
+
+# CLI Information - Metadata about your CLI application
+info:
+  title: "Sample CLI Application"
+  description: "A demonstration CLI application showing gospec-cli conversion capabilities"
+  version: "1.0.0"
+  contact:
+    name: "Sample CLI Team"
+    url: "https://github.com/harihs-330/gospec-cli"
+    email: "support@example.com"
+  license:
+    name: "Apache 2.0"
+    url: "https://www.apache.org/licenses/LICENSE-2.0"
+
+# Source CLI Configuration
+source:
+  # Type of source: "go-package", "binary", or "go-file"
+  type: "go-package"
+  
+  # Local path to the CLI package
+  localPath: "./cmd"
+  
+  # CLI framework (auto-detected if not specified)
+  # Supported: "cobra", "urfave-cli", "flag"
+  framework: "cobra"
+  
+  # Function name that returns the root command
+  # Required for go-package type
+  rootCommandFunc: "GetRootCmd"
+
+# Output Configuration
+output:
+  # Directory where spec files will be generated
+  directory: "./output"
+  
+  # Output formats: yaml, json, or both
+  formats:
+    - yaml
+    - json
+  
+  # Base filename (extensions added automatically)
+  filename: "sample-cli-spec"
+
+# Generation Options
+options:
+  # Include hidden commands in the spec
+  includeHidden: false
+  
+  # Include deprecated commands
+  includeDeprecated: true
+  
+  # Auto-generate operation IDs for commands
+  generateOperationIds: true
+  
+  # Infer response codes and formats
+  inferResponses: true
+  
+  # Tag strategy: "auto", "manual", or "none"
+  # auto: automatically categorize commands
+  tagStrategy: "auto"
+  
+  # Extract reusable components (schemas, parameters, responses)
+  extractComponents: true
+  
+  # Add platform information
+  platforms:
+    - name: linux
+      architectures: [amd64, arm64]
+    - name: darwin
+      architectures: [amd64, arm64]
+    - name: windows
+      architectures: [amd64]
+
