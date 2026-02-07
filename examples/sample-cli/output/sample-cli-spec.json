@@ -1,0 +1,183 @@
+{
+  "opencli": "1.0.0",
+  "info": {
+    "title": "Sample CLI Application",
+    "description": "A demonstration CLI application showing gospec-cli conversion capabilities",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Sample CLI Team",
+      "url": "https://github.com/harihs-330/gospec-cli"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "https://www.apache.org/licenses/LICENSE-2.0"
+    }
+  },
+  "commands": {
+    "/sample-cli/server": {
+      "summary": "Manage server operations",
+      "description": "Start, stop, or manage the server instance.",
+      "operationId": "sample-cliServerCommand",
+      "responses": {
+        "0": {
+          "description": "Command executed successfully",
+          "content": {
+            "text/plain": {
+              "example": "Operation completed successfully"
+            }
+          }
+        },
+        "1": {
+          "description": "Command execution failed",
+          "content": {
+            "text/plain": {
+              "example": "Error: operation failed"
+            }
+          }
+        }
+      }
+    },
+    "/sample-cli/server/start": {
+      "summary": "Start the server",
+      "description": "Start the server on the specified host and port.",
+      "operationId": "sample-cliServerStartCommand",
+      "parameters": [
+        {
+          "name": "host",
+          "in": "flag",
+          "alias": [
+            "h"
+          ],
+          "description": "Host to bind to",
+          "scope": "local",
+          "schema": {
+            "type": "string",
+            "default": "localhost"
+          }
+        },
+        {
+          "name": "port",
+          "in": "flag",
+          "alias": [
+            "p"
+          ],
+          "description": "Port to listen on",
+          "scope": "local",
+          "schema": {
+            "type": "integer",
+            "default": "8080"
+          }
+        }
+      ],
+      "responses": {
+        "0": {
+          "description": "Command executed successfully",
+          "content": {
+            "text/plain": {
+              "example": "Operation completed successfully"
+            }
+          }
+        },
+        "1": {
+          "description": "Command execution failed",
+          "content": {
+            "text/plain": {
+              "example": "Error: operation failed"
+            }
+          }
+        }
+      }
+    },
+    "/sample-cli/server/stop": {
+      "summary": "Stop the server",
+      "description": "Stop the running server instance.",
+      "operationId": "sample-cliServerStopCommand",
+      "responses": {
+        "0": {
+          "description": "Command executed successfully",
+          "content": {
+            "text/plain": {
+              "example": "Operation completed successfully"
+            }
+          }
+        },
+        "1": {
+          "description": "Command execution failed",
+          "content": {
+            "text/plain": {
+              "example": "Error: operation failed"
+            }
+          }
+        }
+      }
+    },
+    "sample-cli": {
+      "summary": "A sample CLI application",
+      "description": "Sample CLI is a demonstration application that shows how to use\ngospec-cli to convert Cobra commands into OpenCLI Specification format.\n\nThis CLI includes common patterns like flags, subcommands, and nested commands.",
+      "operationId": "sample-cliCommand",
+      "parameters": [
+        {
+          "name": "config",
+          "in": "flag",
+          "description": "config file (default is $HOME/.sample-cli.yaml)",
+          "scope": "inherited",
+          "schema": {
+            "type": "string",
+            "default": ""
+          }
+        },
+        {
+          "name": "verbose",
+          "in": "flag",
+          "alias": [
+            "v"
+          ],
+          "description": "verbose output",
+          "scope": "inherited",
+          "schema": {
+            "type": "boolean",
+            "default": "false"
+          }
+        }
+      ],
+      "responses": {
+        "0": {
+          "description": "Command executed successfully",
+          "content": {
+            "text/plain": {
+              "example": "Operation completed successfully"
+            }
+          }
+        },
+        "1": {
+          "description": "Command execution failed",
+          "content": {
+            "text/plain": {
+              "example": "Error: operation failed"
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "responses": {
+      "Error": {
+        "description": "Operation failed",
+        "content": {
+          "text/plain": {
+            "example": "Error: operation failed"
+          }
+        }
+      },
+      "Success": {
+        "description": "Operation completed successfully",
+        "content": {
+          "text/plain": {
+            "example": "Success"
+          }
+        }
+      }
+    }
+  }
+}
