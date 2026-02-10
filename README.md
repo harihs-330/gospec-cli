@@ -1,13 +1,15 @@
-# gospec-cli
+# 🚀 gospec-cli
 
-Generate an **OpenCLI Specification** for your CLI using a simple configuration file.
+> Generate an **OpenCLI Specification** for your CLI using a simple configuration file.
 
-`gospec-cli` allows you to convert your CLI into an OpenCLI specification using a configuration-driven approach.  
+`gospec-cli` allows you to convert your CLI into an OpenCLI specification using a configuration-driven approach.
 Instead of passing many CLI flags, you define everything in a single `configspec.yaml` file.
 
 ---
 
-## Quick Start
+## ⚡ Quick Start
+
+### Step 1: Create Configuration File
 
 In your project root, create a file named **`configspec.yaml`**:
 
@@ -56,9 +58,9 @@ output:
   
   # Base filename (extensions added automatically)
   filename: "sample-cli-spec"
+```
 
-
-### Programmatic Usage (Library)
+## Programmatic Usage (Library)
 
 If you need to integrate into your Go application:
 
@@ -90,13 +92,17 @@ func main() {
 }
 ```
 
-Generate the OpenCLI specification:
+### Step 2: Generate the Specification
 
+Run the following command:
+
+```bash
 go run generate_spec.go
+```
 
+### Expected Output
 
-Expected output:
-
+```text
 Starting OpenCLI Spec Generation...
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -105,13 +111,19 @@ Reading configuration from configspec.yaml...
 ✅ Generated: output/sample-cli-spec.json
 
 ✅ OpenCLI Spec generation completed successfully!
+```
 
+### Generated Files
 
 The generated files will be placed in:
 
+```
 output/
  ├── sample-cli-spec.yaml
  └── sample-cli-spec.json
+```
+
+---
 
 ## 🤝 Contributing
 
@@ -119,23 +131,33 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ### Adding Support for New CLI Frameworks
 
-1. Implement the `Parser` interface in `pkg/parser/`
-2. Register your parser in the registry
-3. Add tests
-4. Update documentation
+1. **Implement** the `Parser` interface in `pkg/parser/`
+2. **Register** your parser in the registry
+3. **Add tests** to ensure reliability
+4. **Update documentation** with examples
+
+---
 
 ## 📄 License
 
 Apache 2.0 - See [LICENSE](LICENSE) file for details
 
+---
+
 ## 🙏 Acknowledgments
 
-- Inspired by OpenAPI/Swagger for REST APIs
-- Built for the [OpenCLI Specification](https://openclispec.org) standard
-- Powered by [Cobra](https://github.com/spf13/cobra)
+- 🎨 Inspired by **OpenAPI/Swagger** for REST APIs
+- 📝 Built for the [**OpenCLI Specification**](https://openclispec.org) standard
+- ⚡ Powered by [**Cobra**](https://github.com/spf13/cobra)
+- 💙 Special thanks to the [**OpenCLI Specification**](https://www.openclispec.org) team for creating and maintaining this amazing standard
+
+---
 
 ## 📞 Support
 
-- 📧 Issues: [GitHub Issues](https://github.com/harihs-330/gospec-cli/issues)
-- 💬 Discussions: [GitHub Discussions](https://github.com/harihs-330/gospec-cli/discussions)
-- 📖 Documentation: [Wiki](https://github.com/harihs-330/gospec-cli/wiki)
+Need help? We're here for you!
+
+- 📧 **Issues**: [GitHub Issues](https://github.com/harihs-330/gospec-cli/issues)
+- 💬 **Discussions**: [GitHub Discussions](https://github.com/harihs-330/gospec-cli/discussions)
+- 📖 **Documentation**: [Wiki](https://github.com/harihs-330/gospec-cli/wiki)
+
