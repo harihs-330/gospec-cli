@@ -32,7 +32,6 @@ info:
 
 # Source CLI Configuration
 source:
-  # Type of source: "go-package", "binary", or "go-file"
   type: "go-package"
   
   # Local path to the CLI package
