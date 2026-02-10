@@ -1,4 +1,4 @@
-# 🚀 gospec-cli
+# gospec-cli
 
 > Generate an **OpenCLI Specification** for your CLI using a simple configuration file.
 
@@ -7,7 +7,7 @@ Instead of passing many CLI flags, you define everything in a single `configspec
 
 ---
 
-## ⚡ Quick Start
+## Quick Start
 
 ### Step 1: Create Configuration File
 
@@ -62,7 +62,17 @@ output:
 
 ## Programmatic Usage (Library)
 
-If you need to integrate into your Go application:
+If you need to integrate into your Go application, first ensure your CLI exposes the root command:
+
+```go
+// In your cmd/root.go file
+// GetRootCmd returns the root command for external access
+func GetRootCmd() *cobra.Command {
+	return rootCmd
+}
+```
+
+Then create a generation script:
 
 ```go
 //go:build ignore
@@ -144,11 +154,11 @@ Apache 2.0 - See [LICENSE](LICENSE) file for details
 
 ---
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
-- 🎨 Inspired by **OpenAPI/Swagger** for REST APIs
-- 📝 Built for the [**OpenCLI Specification**](https://openclispec.org) standard
-- ⚡ Powered by [**Cobra**](https://github.com/spf13/cobra)
+- Inspired by **OpenAPI/Swagger** for REST APIs
+- Built for the [**OpenCLI Specification**](https://openclispec.org) standard
+- Powered by [**Cobra**](https://github.com/spf13/cobra)
 - 💙 Special thanks to the [**OpenCLI Specification**](https://www.openclispec.org) team for creating and maintaining this amazing standard
 
 ---
