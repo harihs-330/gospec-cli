@@ -71,7 +71,7 @@ func GetRootCmd() *cobra.Command {
 }
 ```
 
-Then create a generation script:
+Then create a generation script, create one more file named generate_spec.go:
 
 ```go
 //go:build ignore
